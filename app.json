@@ -19,15 +19,20 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.cyberne7work_dev.UberClone"
     },
     "web": {
       "bundler": "metro",
       "output": "server"
     },
     "plugins": [
-      ["expo-router", { "origin": "https://uber-clone-1b7b7.web.app/" }],
-
+      [
+        "expo-router",
+        {
+          "origin": "https://uber-clone-1b7b7.web.app/"
+        }
+      ],
       [
         "expo-splash-screen",
         {
@@ -39,6 +44,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e7b1ec20-2724-419b-9269-bc5e65f7025b"
+      }
     }
   }
 }

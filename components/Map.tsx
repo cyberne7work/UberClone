@@ -1,9 +1,9 @@
-
-
 import React, { useEffect, useState } from "react";
-import { ActivityIndicator, Text, View } from "react-native";
-import MapView, { Marker, PROVIDER_DEFAULT } from "react-native-maps";
+import { ActivityIndicator, Text, View, Platform } from "react-native";
+import { Marker, PROVIDER_DEFAULT } from "react-native-maps";
 import MapViewDirections from "react-native-maps-directions";
+const MapView =
+  Platform.OS === "web" ? () => null : require("react-native-maps").default;
 
 import { icons } from "@/constants";
 import { useFetch } from "@/lib/fetch";
@@ -89,11 +89,12 @@ const Map = () => {
         style={{ flex: 1 }}
         className="w-full h-full rounded-2xl"
         tintColor="black"
-        mapType="mutedStandard"
+        // mapType="mutedStandard"
         showsPointsOfInterest={false}
         initialRegion={region}
         showsUserLocation={true}
         userInterfaceStyle="light"
+        mapType="standard"
       >
         {markers.map((marker, index) => (
           <Marker

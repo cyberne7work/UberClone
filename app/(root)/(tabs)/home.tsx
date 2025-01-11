@@ -216,7 +216,7 @@ export default function HomeScreen() {
         }}
         ListEmptyComponent={() => (
           <View className="flex flex-col items-center justify-center">
-            {!isLoading ? (
+            {isLoading ? (
               <View>
                 <Image
                   className="w-40 h-40"
